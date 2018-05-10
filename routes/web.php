@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/master', function () {
+    return view('layouts/master');
+});
 Route::get('/', function () {
-    return view('layouts/base');
+    return view('welcome');
 });
