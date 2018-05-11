@@ -25,3 +25,5 @@
 Route::get('/', 'HomeController@showLogin');
 Route::post('/', 'HomeController@doLogin');
 Route::get('/home','HomeController@showHome');
+
+Route::get('/nilaiuh','NilaiController@show');
