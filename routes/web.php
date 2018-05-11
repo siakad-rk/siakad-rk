@@ -26,4 +26,7 @@ Route::get('/', 'HomeController@showLogin');
 Route::post('/', 'HomeController@doLogin');
 Route::get('/home','HomeController@showHome');
 
-Route::get('/nilaiuh','NilaiController@show');
+Route::get('/nilaiuh','NilaiController@showUH');
+Route::get('/nilaips','NilaiController@showPsiko');
+Route::get('/nilaiaf','NilaiController@showAfe');
+Route::get('/nilaimidend','NilaiController@showMidFin');

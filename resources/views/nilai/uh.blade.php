@@ -7,15 +7,15 @@
 @section('content')
 <table class="table table-bordered" style="text-align:center;">
   <tr>
-    <td rowspan="2">No.</td>
-    <td rowspan="2">Mata Pelajaran</td>
-    <td colspan="7">Nilai Ulangan Harian</td>
-    <td rowspan="2" style="width:125px;word-wrap: break-word;">Jumlah Ulangan Harian</td>
-    <td rowspan="2">Rata-rata</td>
+    <td rowspan="2"><b>No.</b></td>
+    <td rowspan="2"><b>Mata Pelajaran</b></td>
+    <td colspan="7"><b>Nilai Ulangan Harian</b></td>
+    <td rowspan="2" style="width:125px;word-wrap: break-word;"><b>Jumlah Ulangan Harian</b></td>
+    <td rowspan="2"><b>Rata-rata</b></td>
   </tr>
   <tr>
     @for($i=1;$i<=7;$i++)
-      <td>{{ $i }}</td>
+      <td><b>{{ $i }}</b></td>
     @endfor
   </tr>
   @foreach($mp as $mp)

@@ -44,12 +44,26 @@ class NilaiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function showUH()
     {
         $mp = MataPelajaran::all();
-        return view('nilai',['mp'=>$mp]);
+        return view('nilai.uh',['mp'=>$mp]);
     }
-
+    public function showPsiko()
+    {
+        $mp = MataPelajaran::all();
+        return view('nilai.psikomotor',['mp'=>$mp]);
+    }
+    public function showAfe()
+    {
+        $mp = MataPelajaran::all();
+        return view('nilai.afektif',['mp'=>$mp]);
+    }
+    public function showMidFin()
+    {
+        $mp = MataPelajaran::all();
+        return view('nilai.check',['mp'=>$mp]);
+    }
     /**
      * Show the form for editing the specified resource.
      *
