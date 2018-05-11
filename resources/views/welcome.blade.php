@@ -4,7 +4,7 @@
 
 @section('content')
   <div class="login-form">
-    <form method="post" action="/">
+    <form method="post" action="/login">
       @csrf
       <div class="form-group">
         <label for="NoInduk">Nomor Induk</label>

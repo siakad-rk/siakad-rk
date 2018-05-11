@@ -22,6 +22,9 @@
 //
 // Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', 'HomeController@showLogin');
-Route::post('/', 'HomeController@doLogin');
-Route::get('/home','HomeController@showHome');
+Route::get('/login', 'HomeController@showLogin')->name('login');
+Route::post('/login', 'HomeController@doLogin');
+
+Route::group(['middleware' => ['session']], function () {
+	Route::get('/','HomeController@showHome')->name('home');
+});
