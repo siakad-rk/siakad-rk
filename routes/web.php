@@ -24,6 +24,7 @@
 
 Route::get('/login', 'HomeController@showLogin')->name('login');
 Route::post('/login', 'HomeController@doLogin');
+Route::get('/logout', 'HomeController@logout')->name('logout');
 
 Route::group(['middleware' => ['session']], function () {
 	Route::get('/','HomeController@showHome')->name('home');
