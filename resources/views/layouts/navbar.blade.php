@@ -9,11 +9,10 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nilai <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Ulangan Harian</a></li>
-            <li><a href="#">Psikomotorik</a></li>
-            <li><a href="#">Afektif</a></li>
-            <li><a href="#">UTS</a></li>
-            <li><a href="#">UAS</a></li>
+            <li><a href="/nilaiuh">Ulangan Harian</a></li>
+            <li><a href="/nilaips">Psikomotorik</a></li>
+            <li><a href="/nilaiaf">Afektif</a></li>
+            <li><a href="/nilaimidend">UTS & UAS</a></li>
           </ul>
         </li>
         <li><a href="#">Ekstrakurikuler</a></li>

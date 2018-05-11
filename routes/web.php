@@ -27,4 +27,8 @@ Route::post('/login', 'HomeController@doLogin');
 
 Route::group(['middleware' => ['session']], function () {
 	Route::get('/','HomeController@showHome')->name('home');
+	Route::get('/nilaiuh','NilaiController@showUH');
+	Route::get('/nilaips','NilaiController@showPsiko');
+	Route::get('/nilaiaf','NilaiController@showAfe');
+	Route::get('/nilaimidend','NilaiController@showMidFin');
 });
