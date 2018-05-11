@@ -13,6 +13,8 @@
                <div class="title m-b-md">
                    SIAKAD
                    <h3>Sistem Informasi Akademik</h3>
+                   <h4>SMAK St.Louis 1</h4>
+                   <h5>Surabaya</h5>
                </div>
                @yield('content')
            </div>
