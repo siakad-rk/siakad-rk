@@ -20,7 +20,13 @@
         <li><a href="#">Bantuan</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Data Pribadi</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span>
+          @if(session('user.name'))
+            {{session('user.name')}}
+          @else
+            Data pribadi
+          @endif
+          </a></li>
         <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>
