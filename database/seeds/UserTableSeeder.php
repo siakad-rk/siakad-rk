@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder
       $teacher = new User();
       $teacher->name = "Rio Anindita P.";
       $teacher->no_induk="12345678";
-      $teacher->password = bcrypt("12345678");
+      $teacher->password =bcrypt("12345678");
       $teacher->kode="GUR";
       $teacher->save();
       // $teacher->roles()->attach($role_teacher);
@@ -28,7 +28,7 @@ class UserTableSeeder extends Seeder
       $student = new User();
       $student->name = "Hendry Wiranto";
       $student->no_induk="25169";
-      $student->password = bcrypt("12345678");
+      $student->password =bcrypt("12345678");
       $student->kode="SIS";
       $student->save();
       // $student->roles()->attach($role_student);
