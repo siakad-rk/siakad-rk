@@ -2,9 +2,7 @@
 
 @section('title','Nilai Afektif')
 
-@section('header')
-  <h1>Rekap Nilai Afektif</h1>
-@stop
+@section('header','Rekap Nilai Afektif')
 
 @section('content')
 <table class="table table-bordered table-striped" style="text-align:center;">

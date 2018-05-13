@@ -2,9 +2,7 @@
 
 @section('title','Nilai Psikomotor')
 
-@section('header')
-  <h1>Rekap Nilai Psikomotor</h1>
-@stop
+@section('header','Rekap Nilai Psikomotor')
 
 @section('content')
 <table class="table table-bordered" style="text-align:center;">

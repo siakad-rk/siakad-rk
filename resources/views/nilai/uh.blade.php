@@ -1,9 +1,8 @@
 @extends('layouts.master')
 
 @section('title','Nilai Ulangan Harian')
-@section('header')
-  <h1>Rekap Nilai Ulangan Harian</h1>
-@stop
+@section('header','Rekap Nilai Ulangan Harian')
+
 @section('content')
 <table class="table table-bordered" style="text-align:center;">
   <tr>

@@ -2,9 +2,7 @@
 
 @section('title','Nilai UTS dan UAS')
 
-@section('header')
-  <h1>Rekap Nilai UTS dan UAS</h1>
-@stop
+@section('header','Rekap Nilai UTS dan UAS')
 
 @section('content')
 <table class="table table-bordered table-striped" style="text-align:center;">

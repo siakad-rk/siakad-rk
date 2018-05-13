@@ -1,0 +1,10 @@
+.btn-basic {
+    color: #fff;
+    background-color: #0495c9;
+    border-color: #357ebd; /*set the color you want here*/
+}
+.btn-basic:hover, .btn-basic:focus, .btn-basic:active, .btn-basic.active, .open>.dropdown-toggle.btn-basic {
+    color: #fff;
+    background-color: #00b3db;
+    border-color: #285e8e; /*set the color you want here*/
+}
