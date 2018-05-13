@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Role;
 use App\User;
+use App\Ekskul;
 
 class UserTableSeeder extends Seeder
 {
@@ -22,15 +23,17 @@ class UserTableSeeder extends Seeder
       $teacher->no_induk="12345678";
       $teacher->password =bcrypt("12345678");
       $teacher->kode="GUR";
-      $teacher->save();
-      // $teacher->roles()->attach($role_teacher);
+
+      $ekskul = Ekskul::find(1);
+      $ekskul->user()->save($teacher);
 
       $student = new User();
       $student->name = "Hendry Wiranto";
       $student->no_induk="25169";
       $student->password =bcrypt("12345678");
       $student->kode="SIS";
-      $student->save();
-      // $student->roles()->attach($role_student);
+
+      $ekskul = Ekskul::find(2);
+      $ekskul->user()->save($student);
     }
 }

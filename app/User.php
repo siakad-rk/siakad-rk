@@ -18,4 +18,8 @@ class User extends Authenticatable
     public function roles(){
       return $this->hasOne('App\Role', 'foreign_key');
     }
+    public function ekskul()
+    {
+        return $this->belongsTo('App\Ekskul');
+    }
 }

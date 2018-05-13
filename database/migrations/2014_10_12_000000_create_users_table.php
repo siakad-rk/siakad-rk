@@ -13,8 +13,15 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        Schema::create('ekskuls', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->timestamps();
+        });
         Schema::create('users', function (Blueprint $table) {
             $table->string('no_induk')->unique();
+            $table->unsignedInteger('ekskul_id')->nullable()->default(NULL);
+            $table->foreign('ekskul_id')->references('id')->on('ekskuls');
             $table->string('name');
             $table->string('password');
             $table->timestamps();

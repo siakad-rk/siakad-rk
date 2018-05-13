@@ -16,7 +16,7 @@
             <li><a href="/nilaimidend">UTS & UAS</a></li>
           </ul>
         </li>
-        <li><a href="#">Ekstrakurikuler</a></li>
+        <li><a href="/ekskul">Ekstrakurikuler</a></li>
         <li><a href="#">Bantuan</a></li>
         @endif
         @if(Auth::user()->kode=="GUR")
