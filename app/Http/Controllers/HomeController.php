@@ -37,4 +37,9 @@ class HomeController extends Controller
         Session::flush();
         return redirect()->route('login');
     }
+
+	public function kalender()
+	{
+		return view('kalender');
+	}
 }

@@ -30,6 +30,7 @@ Route::group(['middleware' => ['session']], function () {
 	Route::get('/','HomeController@showHome')->name('home');
 	Route::get('/ekskul','EkskulController@index')->name('ekskul');
 	Route::post('/tambahekskul','EkskulController@tambah')->name('tambahekskul');
+	Route::get('/kalender','HomeController@kalender')->name('kalender');
 	Route::get('/nilaiuh','NilaiController@showUH');
 	Route::get('/nilaips','NilaiController@showPsiko');
 	Route::get('/nilaiaf','NilaiController@showAfe');
