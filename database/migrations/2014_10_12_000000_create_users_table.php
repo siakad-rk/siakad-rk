@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->foreign('ekskul_id')->references('id')->on('ekskuls');
             $table->string('name');
             $table->string('password');
+            $table->string('posisi');
             $table->timestamps();
         });
     }

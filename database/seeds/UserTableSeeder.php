@@ -23,6 +23,7 @@ class UserTableSeeder extends Seeder
       $teacher->no_induk="12345678";
       $teacher->password =bcrypt("12345678");
       $teacher->kode="GUR";
+      $teacher->posisi="Kelas ia7";
 
       $ekskul = Ekskul::find(1);
       $ekskul->user()->save($teacher);
@@ -32,6 +33,7 @@ class UserTableSeeder extends Seeder
       $student->no_induk="25169";
       $student->password =bcrypt("12345678");
       $student->kode="SIS";
+      $student->posisi="null";
 
       $ekskul = Ekskul::find(2);
       $ekskul->user()->save($student);

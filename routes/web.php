@@ -35,4 +35,5 @@ Route::group(['middleware' => ['session']], function () {
 	Route::get('/nilaips','NilaiController@showPsiko');
 	Route::get('/nilaiaf','NilaiController@showAfe');
 	Route::get('/nilaimidend','NilaiController@showMidFin');
+	Route::get('/posisi','positionController@showPosition');
 });

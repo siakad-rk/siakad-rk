@@ -17,6 +17,7 @@
           </ul>
         </li>
         <li><a href="/ekskul">Ekstrakurikuler</a></li>
+        <li><a href="/posisi">Lihat Posisis Guru</a></li>
         <li><a href="/kalender">Kalender</a></li>
         <li><a href="#">Bantuan</a></li>
         @endif
