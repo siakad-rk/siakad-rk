@@ -42,4 +42,9 @@ class HomeController extends Controller
 	{
 		return view('kalender');
 	}
+
+	public function info()
+	{
+		return view('info');
+	}
 }

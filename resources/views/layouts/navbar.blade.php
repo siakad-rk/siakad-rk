@@ -17,8 +17,9 @@
           </ul>
         </li>
         <li><a href="/ekskul">Ekstrakurikuler</a></li>
-        <li><a href="/posisi">Lihat Posisis Guru</a></li>
+        <li><a href="/posisi">Posisi Guru</a></li>
         <li><a href="/kalender">Kalender</a></li>
+        <li><a href="/info">Info Lomba</a></li>
         <li><a href="#">Bantuan</a></li>
         @endif
         @if(Auth::user()->kode=="GUR")
