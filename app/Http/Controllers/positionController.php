@@ -9,7 +9,7 @@ class positionController extends Controller
 {
     public function showPosition(Request $request)
     {
-        $dosen = User::where('posisi', '!=', 'null')->get();
-        return view('position',['dosen'=>$dosen]);
+        $guru = User::where('posisi', '!=', 'null')->get();
+        return view('position',['guru'=>$guru]);
     }
 }
