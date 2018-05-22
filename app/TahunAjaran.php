@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MataPelajaran extends Model
+class TahunAjaran extends Model
 {
-    protected $primaryKey = 'id';
+    protected $primaryKey = $id;
     public $incrementing = true;
-    protected $fillable = ['pelajaran'];
+    protected $fillable = ['tahun_ajaran','semester'];
     public function nilais(){
         return $this->hasMany('App\Nilai');
     }
