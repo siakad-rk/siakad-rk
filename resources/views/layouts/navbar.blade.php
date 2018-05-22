@@ -32,6 +32,7 @@
             <li><a href="/nilaimidend">UTS & UAS</a></li>
           </ul>
         </li>
+        <li><a href="#">Bantuan</a></li>
         @endif
       </ul>
       <ul class="nav navbar-nav navbar-right">

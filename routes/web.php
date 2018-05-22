@@ -38,3 +38,6 @@ Route::group(['middleware' => ['session']], function () {
 	Route::get('/posisi','positionController@showPosition');
 	Route::get('/info','HomeController@info');
 });
+
+Route::get('/addAnnounce','TeacherController@showFormAnnouncement')->name('formAnnounce');
+Route::post('/addAnnounce','TeacherController@postAnnouncement')->name('addAnnounce');

@@ -6,7 +6,7 @@
 @section('content')
   @if(Auth::user()->kode=="GUR")
     <div align="right" style="padding: 10px">
-      <a href="#" class="btn btn-basic">Tambah Pengumuman</a>
+      <a href="/addAnnounce" class="btn btn-basic">Tambah Pengumuman</a>
     </div>
   @endif
   <div class="panel-group">
