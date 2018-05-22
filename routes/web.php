@@ -37,7 +37,6 @@ Route::group(['middleware' => ['session']], function () {
 	Route::get('/nilaimidend','NilaiController@showMidFin');
 	Route::get('/posisi','positionController@showPosition');
 	Route::get('/info','HomeController@info');
+	Route::get('/addAnnounce','TeacherController@showFormAnnouncement');
+	Route::post('/postAnnounce','TeacherController@postAnnouncement');
 });
-
-Route::get('/addAnnounce','TeacherController@showFormAnnouncement')->name('formAnnounce');
-Route::post('/addAnnounce','TeacherController@postAnnouncement')->name('addAnnounce');
