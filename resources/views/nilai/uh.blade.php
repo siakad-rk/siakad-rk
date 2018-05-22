@@ -4,6 +4,7 @@
 @section('header','Rekap Nilai Ulangan Harian')
 
 @section('content')
+@include('layouts.sems')
 <table class="table table-bordered" style="text-align:center;">
   <tr style="background: #f7f7f7">
     <td rowspan="2"><b>No.</b></td>

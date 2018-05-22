@@ -21,8 +21,10 @@
         <div class="panel panel-info">    
       @endif
           <div class="panel-heading">{{$an->title}} </div>
-          <div class="panel-body">{{$an->description}} </div>
-          <div class="panel-footer">{{$an->users->name}} </div>
+          <div class="panel-body" rows="10">{{$an->description}} </div>
+          <div class="panel-footer">
+            Diumumkan pada: {{$an->created_at}}<br>
+            Oleh: {{$an->users->name}} </div>
         </div> 
     @endforeach
   </div>

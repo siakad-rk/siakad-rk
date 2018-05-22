@@ -5,6 +5,7 @@
 @section('header','Rekap Nilai UTS dan UAS')
 
 @section('content')
+@include('layouts.sems')
 <table class="table table-bordered table-striped" style="text-align:center;">
   <tr>
       <td><b>No.</b></td>
