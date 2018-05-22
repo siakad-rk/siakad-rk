@@ -7,9 +7,11 @@ use App\User;
 
 class Announcement extends Model
 {
-    protected $primaryKey = 'kode';
+    protected $primaryKey = 'kodeP';
+    public $incrementing = false;
     protected $fillable = ['title','description'];
+
     public function users(){
-    	return $this->belongsTo('App\User','foreign_key','no_induk');
+    	return $this->belongsTo('App\User','no_induk');
   	}
 }

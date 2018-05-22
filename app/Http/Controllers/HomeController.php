@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\User;
+use App\Announcement;
 
 class HomeController extends Controller
 {
@@ -29,7 +30,10 @@ class HomeController extends Controller
 
 	public function showHome()
 	{
-		return view('home');
+		$an = Announcement::all();
+		// dd(1);
+		// dd($an->users());
+		return view('home',['an'=>$an]);
 	}
 
 	public function logout()

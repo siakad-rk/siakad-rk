@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Role;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -21,5 +22,8 @@ class User extends Authenticatable
     public function ekskul()
     {
         return $this->belongsTo('App\Ekskul');
+    }
+    public function announcements(){
+        return $this->hasMany('App\Announcement');
     }
 }

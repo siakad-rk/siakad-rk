@@ -14,7 +14,7 @@ class CreateAnnouncementsTable extends Migration
     public function up()
     {
         Schema::create('announcements', function (Blueprint $table) {
-            $table->string('kode')->unique();
+            $table->string('kodeP')->unique()->index();
             $table->string('title');
             $table->string('description');
             $table->string('no_induk');

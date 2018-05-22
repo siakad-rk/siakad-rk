@@ -23,11 +23,12 @@ class TeacherController extends Controller
         $excode = Auth::user()->no_induk;
         $numCode = substr($excode,strlen($excode)-2,strlen($excode)-1);
         $input = new Announcement();
-        $input->kode = $stkode . $numCode;
+        $input->kodeP = $stkode . $numCode . (string)Announcement::count();
         $input->title = $request->title;
         $input->description = $request->content;
         $input->no_induk = Auth::user()->no_induk;
         $input->save();
+        return redirect('/');
     }   
     public function showFormAnnouncement()
     {
