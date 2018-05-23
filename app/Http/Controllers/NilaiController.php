@@ -29,12 +29,7 @@ class NilaiController extends Controller
      */
     public function genExcel()
     {
-       //PDF file is stored under project/public/download/info.pdf
-        $file= public_path(). "/download/template_nilai.xls";
-        $headers = [
-              'Content-Type' => 'application/pdf',
-        ];
-        return Response::download($file, 'template_nilai.xls', $headers);
+       return Excel::download(new Nilai, 'template_nilai.xlsx');
     }
 
     /**
