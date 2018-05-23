@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TahunAjaran extends Model
 {
-    protected $primaryKey = $id;
+    protected $primaryKey = 'id';
     public $incrementing = true;
     protected $fillable = ['tahun_ajaran','semester'];
     public function nilais(){

@@ -17,6 +17,7 @@ class CreateTahunAjaransTable extends Migration
             $table->increments('id');
             $table->string('tahun_ajaran');
             $table->string('semester');
+            $table->timestamps();
         });
     }
 

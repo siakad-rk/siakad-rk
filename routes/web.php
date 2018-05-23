@@ -31,10 +31,13 @@ Route::group(['middleware' => ['session']], function () {
 	Route::get('/ekskul','EkskulController@index')->name('ekskul');
 	Route::post('/tambahekskul','EkskulController@tambah')->name('tambahekskul');
 	Route::get('/kalender','HomeController@kalender')->name('kalender');
+
 	Route::get('/nilaiuh','NilaiController@showUH');
 	Route::get('/nilaips','NilaiController@showPsiko');
 	Route::get('/nilaiaf','NilaiController@showAfe');
 	Route::get('/nilaimidend','NilaiController@showMidFin');
+	Route::get('/inputnilai','NilaiController@showGenExcel');
+	
 	Route::get('/posisi','positionController@showPosition');
 	Route::get('/info','HomeController@info');
 	Route::get('/addAnnounce','TeacherController@showFormAnnouncement');

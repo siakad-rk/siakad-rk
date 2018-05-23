@@ -20,6 +20,7 @@ class CreateNilaisTable extends Migration
             $table->foreign('id_mapel')->references('id')->on('mata_pelajarans');
             $table->integer('id_semester')->unsigned();
             $table->foreign('id_semester')->references('id')->on('tahun_ajarans');
+            $table->string('kode');
             $table->integer('uh1')->nullable();
             $table->integer('uh2')->nullable();
             $table->integer('uh3')->nullable();

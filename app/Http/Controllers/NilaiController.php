@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\MataPelajaran;
+use App\TahunAjaran;
 
 class NilaiController extends Controller
 {
@@ -63,6 +64,11 @@ class NilaiController extends Controller
     {
         $mp = MataPelajaran::all();
         return view('nilai.check',['mp'=>$mp]);
+    }
+    public function showGenExcel(){
+        $mp = MataPelajaran::all();
+        $sem = TahunAjaran::all();
+        return view('nilai.up',['mp'=>$mp , 'sem'=>$sem]);
     }
     /**
      * Show the form for editing the specified resource.

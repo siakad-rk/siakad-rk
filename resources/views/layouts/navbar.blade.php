@@ -23,15 +23,7 @@
         <li><a href="#">Bantuan</a></li>
         @endif
         @if(Auth::user()->kode=="GUR")
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Input Nilai <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/nilaiuh">Ulangan Harian</a></li>
-            <li><a href="/nilaips">Psikomotorik</a></li>
-            <li><a href="/nilaiaf">Afektif</a></li>
-            <li><a href="/nilaimidend">UTS & UAS</a></li>
-          </ul>
-        </li>
+        <li><a href="/inputnilai">Input Nilai</a></li>
         <li><a href="#">Bantuan</a></li>
         @endif
       </ul>
