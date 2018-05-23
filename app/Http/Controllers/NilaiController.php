@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Excel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Facade;
+use Response;
 use App\MataPelajaran;
 use App\TahunAjaran;
+use App\Nilai;
 
 class NilaiController extends Controller
 {
@@ -23,9 +27,14 @@ class NilaiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function genExcel()
     {
-        //
+       //PDF file is stored under project/public/download/info.pdf
+        $file= public_path(). "/download/template_nilai.xls";
+        $headers = [
+              'Content-Type' => 'application/pdf',
+        ];
+        return Response::download($file, 'template_nilai.xls', $headers);
     }
 
     /**

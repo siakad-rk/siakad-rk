@@ -7,6 +7,8 @@
   <div class="row">
     <div class="blok">
       <h3>1. Buat Template Excel</h3>
+      <form method="post" action="/genexe">
+        @csrf
         <div class="form-group">
         <label for="mpc">Mata Pelajaran</label>
           <select class="form-control" id="mpc" name="mpc">
@@ -34,6 +36,7 @@
           </select>
         </div>
         <button type="submit" class="btn btn-success">Generate Excel</button>
+      </form>
     </div>
     <br>
     <div class="blok">
