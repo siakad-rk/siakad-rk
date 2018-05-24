@@ -3,26 +3,44 @@
 @section('title','Ekstrakulikuler')
 @section('header','Ekstrakulikuler')
 
+@section('datatables')
+  $(document).ready(function() {
+    $('#infolomba').DataTable();} 
+  );
+@stop
+
 @section('content')
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">    
+    <table id="infolomba" class="table table-bordered display" style="text-align:center;">
+      <thead>
+        <tr>
+          <td width="10%"><b>No.</b></td>
+          <td><b>Name Ekskul</b></td>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach($ekskul as $ekskuls)
+        @if($ekskuls->name==$ekskul_user->name)
+          <tr bgcolor="FF0000">
+        @else
+          <tr>
+        @endif
+          <td>{{$ekskuls->id-1}}</td>
+          <td>{{$ekskuls->name}}</td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
+  </div>
+</div>
 @if(session('user.ekskul_id')==1)
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Tambah Ekskul</button><br><br>
 @else
-  <div>
+  <div class="row">
     Ekstrakulikuler anda: {{$ekskul_user->name}}<br><br>
   </div>
 @endif
-<table class="table table-bordered" style="text-align:center;">
-  <tr>
-    <td><b>No.</b></td>
-    <td><b>Name Ekskul</b></td>
-  </tr>
-  @foreach($ekskul as $ekskuls)
-  <tr>
-    <td>{{$ekskuls->id-1}}</td>
-    <td>{{$ekskuls->name}}</td>
-  </tr>
-  @endforeach
-</table>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
