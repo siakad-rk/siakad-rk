@@ -27,15 +27,7 @@ class NilaiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function genExcel(Request $request)
-    {
-        $filename = "\public\download\\template_nilai.xls";
-        Excel::load($filename, function($file) {
-
-            // modify stuff
-
-        })->export('xls');
-    }
+   
 
     /**
      * Store a newly created resource in storage.
@@ -43,11 +35,23 @@ class NilaiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+     public function genExcel(Request $request)
     {
-        //
-    }
+        // dd($request->mpc);
+        $name = $request->mpc;
+        $cat = $request->cat;
+        $sems = $request->sems; 
+        $filename = $name . ' - ' . $cat . ' - ' . $sems;
+        // dd($filename);
+        $filepath = "\public\download\\template_nilai.xls";
+        Excel::load($filepath, function($file) use($filename){
+            $sheet1 = $file->setActiveSheetIndex(0);
 
+            Excel::create($filename, function($excel) use($sheet1) {
+                $excel->addExternalSheet($sheet1);
+            })->export('xls');
+        });
+    }
     /**
      * Display the specified resource.
      *
