@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserTableSeeder::class);
         $this->call(MaPelSeeder::class);
         $this->call(SemesterSeeder::class);
+        $this->call(NilaiSeeder::class);
     }
 }

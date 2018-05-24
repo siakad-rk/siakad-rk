@@ -10,6 +10,6 @@ class TahunAjaran extends Model
     public $incrementing = true;
     protected $fillable = ['tahun_ajaran','semester'];
     public function nilais(){
-        return $this->hasMany('App\Nilai');
+        return $this->hasMany('App\Nilai', 'id_semester');
     }
 }

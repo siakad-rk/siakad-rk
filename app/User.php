@@ -9,6 +9,7 @@ class User extends Authenticatable
 {
     use Notifiable;
     protected $primaryKey = 'no_induk';
+    protected $table ='users';
     protected $fillable = [
         'name', 'no_induk', 'password','roles'
     ];
@@ -26,7 +27,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Announcement');
     }
     public function nilais(){
-        return $this->hasMany('App\Nilai');
+        return $this->hasMany('App\Nilai','no_induk', 'no_induk_siswa');
     }
 
 }

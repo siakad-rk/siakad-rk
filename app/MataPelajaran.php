@@ -10,6 +10,6 @@ class MataPelajaran extends Model
     public $incrementing = true;
     protected $fillable = ['pelajaran'];
     public function nilais(){
-        return $this->hasMany('App\Nilai');
+        return $this->hasMany('App\Nilai', 'id_mapel');
     }
 }

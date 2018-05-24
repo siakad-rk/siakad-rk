@@ -23,7 +23,13 @@
         <li><a href="#">Bantuan</a></li>
         @endif
         @if(Auth::user()->kode=="GUR")
-        <li><a href="/inputnilai">Input Nilai</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nilai <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/inputnilai">Input Nilai</a></li>
+            <li><a href="/inputnilaiexcel">Input Nilai Excel</a></li>
+          </ul>
+        </li>
         <li><a href="#">Bantuan</a></li>
         @endif
       </ul>

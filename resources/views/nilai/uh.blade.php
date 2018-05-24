@@ -19,7 +19,7 @@
     @endfor
   </tr>
   @foreach($mp as $mp)
-    @if(($mp->id%2)!=0)<tr>
+    @if($mp->id%2!=0)<tr>
     @else <tr style="background: #f7f7f7">
     @endif
     <td>{{$mp->id}}</td>
