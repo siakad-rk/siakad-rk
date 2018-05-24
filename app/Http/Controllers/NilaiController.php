@@ -27,9 +27,14 @@ class NilaiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function genExcel()
+    public function genExcel(Request $request)
     {
-       return Excel::download(new Nilai, 'template_nilai.xlsx');
+        $filename = "\public\download\\template_nilai.xls";
+        Excel::load($filename, function($file) {
+
+            // modify stuff
+
+        })->export('xls');
     }
 
     /**
