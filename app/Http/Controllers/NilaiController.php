@@ -38,17 +38,21 @@ class NilaiController extends Controller
      public function genExcel(Request $request)
     {
         // dd($request->mpc);
-        $name = $request->mpc;
+        $mp = $request->mpc;
         $cat = $request->cat;
         $sems = $request->sems; 
-        $filename = $name . ' - ' . $cat . ' - ' . $sems;
+        $filename = $mp . ' - ' . $cat . ' - ' . $sems;
         // dd($filename);
         $filepath = "\public\download\\template_nilai.xls";
-        Excel::load($filepath, function($file) use($filename){
+        Excel::load($filepath, function($file) use($filename,$mp,$cat,$sems){
             $sheet1 = $file->setActiveSheetIndex(0);
-
-            Excel::create($filename, function($excel) use($sheet1) {
+            Excel::create($filename, function($excel) use($sheet1,$mp,$cat,$sems) {
                 $excel->addExternalSheet($sheet1);
+                $sheet1->setCellValue('C2', $mp);
+                $sheet1->setCellValue('C3', $cat);
+                $sv = explode(" - ", $sems);
+                $sheet1->setCellValue('C5', $sv[0]);
+                $sheet1->setCellValue('C6', $sv[1]);
             })->export('xls');
         });
     }
