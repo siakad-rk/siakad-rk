@@ -12,20 +12,6 @@ use App\Nilai;
 
 class NilaiController extends Controller
 {
-    public function showNilaiInput()
-    {
-        $mp = MataPelajaran::all();
-        $sem = TahunAjaran::all();
-        $nilai = Nilai::all();
-        return view('nilai.input',['mp'=>$mp , 'sem'=>$sem, 'nilai'=>$nilai]);
-    }
-    public function submitNilaiInput()
-    {
-        $mp = MataPelajaran::all();
-        $sem = TahunAjaran::all();
-        $nilai = Nilai::all();
-        return view('nilai.input',['mp'=>$mp , 'sem'=>$sem, 'nilai'=>$nilai]);
-    }
     public function genExcel(Request $request)
     {
         $mp = $request->mpc;
