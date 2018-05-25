@@ -8,8 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
-    protected $primaryKey = 'no_induk';
+    public $incrementing = false;
+    public $timestamps = false;
+    
     protected $table ='users';
+    protected $primaryKey = 'no_induk';
     protected $fillable = [
         'name', 'no_induk', 'password','roles'
     ];

@@ -42,7 +42,7 @@ class NilaiSeeder extends Seeder
 
 
             $nilai = new Nilai;
-            $nilai->kode = "AF";
+            $nilai->kode = "PS";
             $nilai->no_induk_siswa = '25169';
             $nilai->id_mapel = 1;
             $nilai->id_semester = 1;
