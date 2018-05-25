@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
-@section('title','Input/Edit Nilai Komunal')
-@section('header','Input/Edit Nilai Komunal')
+@section('title','Input/Edit Nilai')
+@section('header','Input/Edit Nilai')
 
 @section('content')
 <ul class="nav nav-tabs">
