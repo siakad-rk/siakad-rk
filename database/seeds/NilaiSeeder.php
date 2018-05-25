@@ -24,6 +24,29 @@ class NilaiSeeder extends Seeder
         	$nilai->id_mapel = 1;
         	$nilai->id_semester = 1;
         	$nilai->save();
+
+            $nilai = new Nilai;
+            $nilai->kode = "TG";
+            $nilai->no_induk_siswa = '25169';
+            $nilai->id_mapel = 1;
+            $nilai->id_semester = 1;
+            $nilai->save();
+
+
+            $nilai = new Nilai;
+            $nilai->kode = "FA";
+            $nilai->no_induk_siswa = '25169';
+            $nilai->id_mapel = 1;
+            $nilai->id_semester = 1;
+            $nilai->save();
+
+
+            $nilai = new Nilai;
+            $nilai->kode = "AF";
+            $nilai->no_induk_siswa = '25169';
+            $nilai->id_mapel = 1;
+            $nilai->id_semester = 1;
+            $nilai->save();
      //    }
     	// DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
