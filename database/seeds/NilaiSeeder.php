@@ -19,7 +19,7 @@ class NilaiSeeder extends Seeder
     	// DB::statement('SET FOREIGN_KEY_CHECKS = 1');
      //    foreach ($users as $key => $user) {
         	$nilai = new Nilai;
-        	$nilai->kode = 1;
+        	$nilai->kode = "UH";
         	$nilai->no_induk_siswa = '25169';
         	$nilai->id_mapel = 1;
         	$nilai->id_semester = 1;

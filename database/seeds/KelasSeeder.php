@@ -27,21 +27,21 @@ class KelasSeeder extends Seeder
 
 		$k = new Kelas();
         $k->nama_kelas = "XI-IPA 1";
-        $k->jenjang = 10;
+        $k->jenjang = 11;
         $k->penjurusan = "IPA";
         $k->alfabet = "1";
         $k->save();
 
         $k = new Kelas();
         $k->nama_kelas = "XI-IPA 2";
-        $k->jenjang = 10;
+        $k->jenjang = 11;
         $k->penjurusan = "IPA";
         $k->alfabet = "2";
         $k->save();
 
         $k = new Kelas();
         $k->nama_kelas = "XI-IPS 1";
-        $k->jenjang = 10;
+        $k->jenjang = 11;
         $k->penjurusan = "IPS";
         $k->alfabet = "1";
         $k->save();
