@@ -28,12 +28,10 @@ class NilaiController extends Controller
     }
     public function genExcel(Request $request)
     {
-        // dd($request->mpc);
         $mp = $request->mpc;
         $cat = $request->cat;
         $sems = $request->sems; 
         $filename = $mp . ' - ' . $cat . ' - ' . $sems;
-        // dd($filename);
         $filepath = "\public\download\\template_nilai.xls";
         Excel::load($filepath, function($file) use($filename,$mp,$cat,$sems){
             $sheet1 = $file->setActiveSheetIndex(0);
@@ -70,6 +68,7 @@ class NilaiController extends Controller
     public function showGenExcel(){
         $mp = MataPelajaran::all();
         $sem = TahunAjaran::all();
-        return view('nilai.up',['mp'=>$mp , 'sem'=>$sem]);
+        $nilai = Nilai::all();
+        return view('nilai.up',['mp'=>$mp , 'sem'=>$sem, 'nilai'=>$nilai, 'mps'=>$mp, 'sems'=>$sem]);
     }
 }
