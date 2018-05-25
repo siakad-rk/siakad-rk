@@ -69,6 +69,6 @@ class NilaiController extends Controller
         $mp = MataPelajaran::all();
         $sem = TahunAjaran::all();
         $nilai = Nilai::all();
-        return view('nilai.up',['mp'=>$mp , 'sem'=>$sem, 'nilai'=>$nilai, 'mps'=>$mp, 'sems'=>$sem]);
+        return view('nilai.up',['mp'=>$mp , 'sem'=>$sem, 'nilai'=>$nilai, 'mps'=>$mp, 'sems'=>$sem, 'mpx'=>$mp, 'semx'=>$sem]);
     }
 }
