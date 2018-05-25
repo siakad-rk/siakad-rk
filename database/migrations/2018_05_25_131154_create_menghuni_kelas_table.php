@@ -14,8 +14,10 @@ class CreateMenghuniKelasTable extends Migration
     public function up()
     {
         Schema::create('menghuni_kelas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->string('no_induk');
+            $table->foreign('no_induk')->references('no_induk')->on('users');
+            $table->string('nama_kelas');
+            $table->foreign('nama_kelas')->references('nama_kelas')->on('kelas');
         });
     }
 

@@ -32,5 +32,7 @@ class User extends Authenticatable
     public function nilais(){
         return $this->hasMany('App\Nilai','no_induk', 'no_induk_siswa');
     }
-
+    public function menghuni_kelas(){
+        return $this->hasOne('App\MenghuniKelas','no_induk');
+    }
 }
