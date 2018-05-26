@@ -12,6 +12,15 @@
 @section('content')
 <div class="row">
   <div class="col-md-8 col-md-offset-2">    
+    @if(session('user.ekskul_id')==1 || !isset($ekskul_user->name))
+      <div class="text-right">        
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Tambah Ekskul</button><br><br>
+      </div>
+    @elseif (isset($ekskul_user->name))
+      <div class="text-right">       
+        Ekstrakulikuler anda: {{$ekskul_user->name}}<br><br>
+      </div>
+    @endif
     <table id="infolomba" class="table table-bordered display" style="text-align:center;">
       <thead>
         <tr>
@@ -21,7 +30,7 @@
       </thead>
       <tbody>
         @foreach($ekskul as $ekskuls)
-        @if($ekskuls->name==$ekskul_user->name)
+        @if(isset($ekskul_user->name) && $ekskuls->name==$ekskul_user->name)
           <tr bgcolor="FF0000">
         @else
           <tr>
@@ -34,13 +43,6 @@
     </table>
   </div>
 </div>
-@if(session('user.ekskul_id')==1)
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Tambah Ekskul</button><br><br>
-@else
-  <div class="row">
-    Ekstrakulikuler anda: {{$ekskul_user->name}}<br><br>
-  </div>
-@endif
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

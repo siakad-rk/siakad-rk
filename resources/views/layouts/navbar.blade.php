@@ -24,6 +24,7 @@
         @endif
         @if(Auth::user()->kode=="GUR")
         <li><a href="/inputnilaiexcel">Input/Edit Nilai</a></li>
+        <li><a href="/addinfo">Add Lomba</a></li>
         <li><a href="#">Bantuan</a></li>
         @endif
       </ul>
