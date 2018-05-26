@@ -10,7 +10,7 @@ class Nilai extends Model
 {
     public $incrementing = false;
     public $timestamps = false;
-    protected $fillable = ['uh1','uh2','uh3','uh4','uh5','uh6'];
+    protected $fillable = ['1','2','3','4','5','6'];
     public function users(){
     	return $this->belongsTo('App\User','no_induk_siswa','no_induk');
     }

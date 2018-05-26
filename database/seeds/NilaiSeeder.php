@@ -23,6 +23,9 @@ class NilaiSeeder extends Seeder
         	$nilai->no_induk_siswa = '25169';
         	$nilai->id_mapel = 1;
         	$nilai->id_semester = 1;
+            for($a='1';$a<='6';$a++){
+                ${'uh'.$a}=null;
+            }
         	$nilai->save();
 
             $nilai = new Nilai;
@@ -30,6 +33,9 @@ class NilaiSeeder extends Seeder
             $nilai->no_induk_siswa = '25169';
             $nilai->id_mapel = 1;
             $nilai->id_semester = 1;
+            for($a='1';$a<='6';$a++){
+                ${'uh'.$a}=null;
+            }
             $nilai->save();
 
 
@@ -38,6 +44,9 @@ class NilaiSeeder extends Seeder
             $nilai->no_induk_siswa = '25169';
             $nilai->id_mapel = 1;
             $nilai->id_semester = 1;
+            for($a='1';$a<='6';$a++){
+                ${'uh'.$a}=null;
+            }
             $nilai->save();
 
 
@@ -46,6 +55,9 @@ class NilaiSeeder extends Seeder
             $nilai->no_induk_siswa = '25169';
             $nilai->id_mapel = 1;
             $nilai->id_semester = 1;
+            for($a='1';$a<='6';$a++){
+                ${'uh'.$a}=null;
+            }
             $nilai->save();
      //    }
     	// DB::statement('SET FOREIGN_KEY_CHECKS = 1');
