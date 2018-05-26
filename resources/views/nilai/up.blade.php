@@ -21,7 +21,7 @@
     <div class="row">
       <div class="blok">
         <h3>1. Buat Template Excel</h3>
-        <form method="post" action="/genexe">
+        <form method="post" action="/genexecommunal">
             @csrf
             <div class="form-group">
               <label for="mpc">Mata Pelajaran</label>
@@ -66,7 +66,7 @@
     <div class="row">
       <div class="blok">
         <h3>1. Buat Template Excel</h3>
-        <form method="post" action="/genexe">
+        <form method="post" action="/genexeclass">
             @csrf
             <div class="form-group">
               <label for="mpc">Mata Pelajaran</label>

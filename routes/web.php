@@ -37,7 +37,8 @@ Route::group(['middleware' => ['session']], function () {
 	Route::get('/nilaiaf','NilaiController@showAfe');
 	Route::get('/nilaimidend','NilaiController@showMidFin');
 	Route::get('/inputnilaiexcel','NilaiController@showGenExcel');
-	Route::post('/genexe','NilaiController@genExcel');
+	Route::post('/genexecommunal','NilaiController@genExcelCommunal');
+	Route::post('/genexeclass','NilaiController@genExcelClass');
 	
 	Route::get('/posisi','positionController@showPosition');
 	Route::get('/info','HomeController@info');
