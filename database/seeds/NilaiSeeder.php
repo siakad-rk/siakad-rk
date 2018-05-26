@@ -24,7 +24,7 @@ class NilaiSeeder extends Seeder
         	$nilai->id_mapel = 1;
         	$nilai->id_semester = 1;
             for($a='1';$a<='6';$a++){
-                ${'uh'.$a}=null;
+                $nilai->$a=null;
             }
         	$nilai->save();
 
@@ -34,7 +34,7 @@ class NilaiSeeder extends Seeder
             $nilai->id_mapel = 1;
             $nilai->id_semester = 1;
             for($a='1';$a<='6';$a++){
-                ${'uh'.$a}=null;
+                $nilai->$a=null;
             }
             $nilai->save();
 
@@ -45,7 +45,7 @@ class NilaiSeeder extends Seeder
             $nilai->id_mapel = 1;
             $nilai->id_semester = 1;
             for($a='1';$a<='6';$a++){
-                ${'uh'.$a}=null;
+                $nilai->$a=null;
             }
             $nilai->save();
 
@@ -56,7 +56,7 @@ class NilaiSeeder extends Seeder
             $nilai->id_mapel = 1;
             $nilai->id_semester = 1;
             for($a='1';$a<='6';$a++){
-                ${'uh'.$a}=null;
+                $nilai->$a=null;
             }
             $nilai->save();
      //    }
