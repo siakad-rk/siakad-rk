@@ -21,12 +21,12 @@ class CreateNilaisTable extends Migration
             $table->integer('id_semester')->unsigned();
             $table->foreign('id_semester')->references('id')->on('tahun_ajarans');
             $table->string('kode');
-            $table->integer('uh1')->nullable()->default(0);
-            $table->integer('uh2')->nullable()->default(0);
-            $table->integer('uh3')->nullable()->default(0);
-            $table->integer('uh4')->nullable()->default(0);
-            $table->integer('uh5')->nullable()->default(0);
-            $table->integer('uh6')->nullable()->default(0);
+            $table->integer('1')->nullable();
+            $table->integer('2')->nullable();
+            $table->integer('3')->nullable();
+            $table->integer('4')->nullable();
+            $table->integer('5')->nullable();
+            $table->integer('6')->nullable();
         });
     }
 
