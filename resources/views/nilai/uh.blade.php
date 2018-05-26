@@ -25,7 +25,7 @@
     <td>{{$mp->id}}</td>
     <td>{{$mp->pelajaran}}</td>
     @for($i=1;$i<=7;$i++)
-      <td>0</td>
+      <td></td>
     @endfor
     <td>0</td>
     <td>0</td>

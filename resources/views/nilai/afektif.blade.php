@@ -17,8 +17,8 @@
   <tr>
     <td>{{$mp->id}}</td>
     <td>{{$mp->pelajaran}}</td>
-    <td>0</td>
-    <td>E</td>
+    <td></td>
+    <td></td>
   </tr>
   @endforeach
 </table>

@@ -45,7 +45,7 @@
               <label for="mpc">Tahun Ajaran - Semester</label>
               <select class="form-control" id="sems" name="sems">
                 @foreach($sem as $sem)
-                <option>{{$sem->tahun_ajaran}} - {{$sem->semester}}</option>
+                <option>{{$sem->tahun_ajaran}}-{{$sem->semester}}</option>
                 @endforeach
               </select>
             </div>
@@ -89,14 +89,16 @@
             <div class="form-group">
             <label for="cat">Kelas</label>
               <select class="form-control" id="kls" name="kls">
-                <option>[.....]</option>
+                @foreach($kelas as $kelas)
+                <option>{{$kelas->nama_kelas}}</option>
+                @endforeach
               </select>
             </div>
             <div class="form-group">
               <label for="mpc">Tahun Ajaran - Semester</label>
               <select class="form-control" id="sems" name="sems">
                 @foreach($semx as $semx)
-                <option>{{$semx->tahun_ajaran}} - {{$semx->semester}}</option>
+                <option>{{$semx->tahun_ajaran}}-{{$semx->semester}}</option>
                 @endforeach
               </select>
             </div>
@@ -140,7 +142,7 @@
           <label for="mpc">Tahun Ajaran - Semester</label>
             <select class="form-control" id="sems" name="sems">
               @foreach($sems as $sems)
-              <option>{{$sems->tahun_ajaran}} - {{$sems->semester}}</option>
+              <option>{{$sems->tahun_ajaran}}-{{$sems->semester}}</option>
               @endforeach
             </select>
           </div>
