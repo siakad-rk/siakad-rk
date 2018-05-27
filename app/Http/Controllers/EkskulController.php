@@ -21,6 +21,7 @@ class EkskulController extends Controller
         }
         return view('ekskul.index',['ekskul'=>$ekskul, 'ekskul_user'=>$ekskul_user]);
     }
+
     public function tambah(Request $request)
     {
     	$student = User::where('no_induk', session('user.no_induk'))->get();
