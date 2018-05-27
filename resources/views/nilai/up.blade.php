@@ -57,7 +57,11 @@
         <h3>2. Upload Nilai</h3>
         <form action="/postexe" method="post">
           @csrf
-          <a href="#">Klik disini untuk upload file excel</a>
+          <div class="form-group">
+            <label for="fupload">Masukkan file yang akan di upload </label>
+            <input type="file" id="fupload" name="fupload"></input>
+          </div>
+          <button type="submit" class="btn btn-success">Upload</button>
         </form>  
       </div>
     </div>     
@@ -110,7 +114,11 @@
         <h3>2. Upload Nilai</h3>
         <form action="/postexe" method="post">
           @csrf
-          <a href="#">Klik disini untuk upload file excel</a>
+          <div class="form-group">
+            <label for="fupload">Masukkan file yang akan di upload </label>
+            <input type="file" id="fupload" name="fupload"></input>
+          </div>
+          <button type="submit" class="btn btn-success">Upload</button>
         </form>  
       </div>
     </div>    
