@@ -32,8 +32,16 @@ class NilaiController extends Controller
                         'right' => array(
                             'style' => 'thin',
                         ),
-                    ),
-                );
+                    )
+            );
+    }
+    public function getTextCenterStyle(){
+        return $styleArray = array(
+                'alignment' => array(
+                    'horizontal' => 'center',
+                    'vertical' => 'center',
+                )
+            );
     }
     public function genExcelCommunal(Request $request)
     {
@@ -85,11 +93,13 @@ class NilaiController extends Controller
         $cat = $request->cat;
         $sems = $request->sems;
         $kls = $request->kls; 
+        $ctr = (string)$request->ctr;
         $bs = $this->getBorderStyle();
         $user = MenghuniKelas::where('nama_kelas',$kls)->get();
-        $filename = $mp . '-' . $cat . '-' . $sems . '-'. $kls;
-        $filepath = "\public\download\\template_nilai_perkelas.xls";
-        Excel::load($filepath, function($file) use($filename,$mp,$cat,$sems,$bs,$user,$kls){
+        if($ctr=="Semua"){
+            $filepath = "\public\download\\template_nilai_perkelas.xls";
+            $filename = $mp . '-' . $cat . '-' . $sems . '-'. $kls;
+            Excel::load($filepath, function($file) use($filename,$mp,$cat,$sems,$bs,$user,$kls){
             $sheet1 = $file->setActiveSheetIndex(0);
             Excel::create($filename, function($excel) use($sheet1,$mp,$cat,$sems,$bs,$user,$kls) {
 
@@ -123,6 +133,49 @@ class NilaiController extends Controller
 
             })->export('xls');
         });
+        }
+        else{
+            $tc = $this->getTextCenterStyle();
+            $filepath = "\public\download\\template_nilai_perkelas_perulangan.xls";
+            $filename = $mp . '-' . $cat . '-' . $sems . '-'. $kls . '-'.(string)$ctr;
+            Excel::load($filepath, function($file) use($filename,$mp,$cat,$sems,$bs,$user,$kls,$ctr,$tc){
+            $sheet1 = $file->setActiveSheetIndex(0);
+            Excel::create($filename, function($excel) use($sheet1,$mp,$cat,$sems,$bs,$user,$kls,$ctr,$tc) {
+
+                $excel->addExternalSheet($sheet1);
+                $sheet1->setCellValue('C2', $mp);
+                $sheet1->setCellValue('C3', $cat);
+                $sheet1->setCellValue('C4', Auth::user()->name);
+                $sv = explode("-", $sems);
+                $sheet1->setCellValue('C5', $sv[0]);
+                $sheet1->setCellValue('C6', $sv[1]);
+                $sheet1->setCellValue('C7', $kls);
+                $sheet1->setCellValue('C8', $ctr);
+                
+                for($a = '1'; $a <='8'; $a++){
+                    $sheet1->getStyle('A'.$a)->applyFromArray($bs);
+                    $sheet1->getStyle('C'.$a)->applyFromArray($bs);
+                    $sheet1->getStyle('C'.$a)->applyFromArray($tc);
+                }
+                for($a = 'A'; $a <='C'; $a++){
+                    $sheet1->getStyle($a.'10')->applyFromArray($bs);
+                    $sheet1->getStyle($a.'11')->applyFromArray($bs);
+                }
+                $now = 12;
+                foreach($user as $us){
+                    $cast = (string)$now;
+                    $sheet1->setCellValue('A'.$cast,$us->no_induk);
+                    $sheet1->setCellValue('B'.$cast,$us->users->name);
+                    for($a = 'A'; $a <='C'; $a++){
+                        $sheet1->getStyle($a.$now)->applyFromArray($bs);
+                    }
+                    $now+=1;  
+                }
+
+            })->export('xls');
+        });   
+        }
+        
     }
     public function showUH()
     {

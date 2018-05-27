@@ -32,7 +32,7 @@
               </select>
             </div>
             <div class="form-group">
-            <label for="cat">Jenis Nilai</label>
+            <label for="cat">Jenis Penilaian</label>
               <select class="form-control" id="cat" name="cat">
                 <option>Ulangan Harian</option>
                 <option>Psikomotorik</option>
@@ -81,13 +81,25 @@
               </select>
             </div>
             <div class="form-group">
-            <label for="cat">Jenis Nilai</label>
+            <label for="cat">Jenis Penilaian</label>
               <select class="form-control" id="cat" name="cat">
                 <option>Ulangan Harian</option>
                 <option>Psikomotorik</option>
                 <option>Afektif</option>
                 <option>UTS</option>
                 <option>UAS</option>
+              </select>
+            </div>
+            <div class="form-group">
+            <label for="cat">Penilaian ke-</label>
+              <select class="form-control" id="ctr" name="ctr">
+                <option>Semua</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
               </select>
             </div>
             <div class="form-group">
