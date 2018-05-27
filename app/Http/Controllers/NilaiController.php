@@ -35,6 +35,7 @@ class NilaiController extends Controller
                     )
             );
     }
+
     public function getTextCenterStyle(){
         return $styleArray = array(
                 'alignment' => array(
@@ -43,14 +44,14 @@ class NilaiController extends Controller
                 )
             );
     }
-    public function genExcelCommunal(Request $request)
-    {
+
+    public function genExcelCommunal(Request $request){
         $mp = $request->mpc;
         $cat = $request->cat;
         $sems = $request->sems; 
         $bs = $this->getBorderStyle();
         $user = User::where('kode', 'SIS')->get();
-        $filename = $mp . '-' . $cat . '-' . $sems . '-Komunal';
+        $filename = $mp . '-' . $cat . '-ALL-' . $sems . '-Komunal';
         $filepath = "\public\download\\template_nilai_komunal.xls";
         Excel::load($filepath, function($file) use($filename,$mp,$cat,$sems,$bs,$user){
             $sheet1 = $file->setActiveSheetIndex(0);
@@ -87,8 +88,7 @@ class NilaiController extends Controller
         });
     }
 
-    public function genExcelClass(Request $request)
-    {
+    public function genExcelClass(Request $request){
         $mp = $request->mpc;
         $cat = $request->cat;
         $sems = $request->sems;
@@ -98,7 +98,7 @@ class NilaiController extends Controller
         $user = MenghuniKelas::where('nama_kelas',$kls)->get();
         if($ctr=="Semua"){
             $filepath = "\public\download\\template_nilai_perkelas.xls";
-            $filename = $mp . '-' . $cat . '-' . $sems . '-'. $kls;
+            $filename = $mp . '-' . $cat .'-ALL-' . $sems . '-'. $kls;
             Excel::load($filepath, function($file) use($filename,$mp,$cat,$sems,$bs,$user,$kls){
             $sheet1 = $file->setActiveSheetIndex(0);
             Excel::create($filename, function($excel) use($sheet1,$mp,$cat,$sems,$bs,$user,$kls) {
@@ -137,7 +137,7 @@ class NilaiController extends Controller
         else{
             $tc = $this->getTextCenterStyle();
             $filepath = "\public\download\\template_nilai_perkelas_perulangan.xls";
-            $filename = $mp . '-' . $cat . '-' . $sems . '-'. $kls . '-'.(string)$ctr;
+            $filename = $mp . '-' . $cat . '-'.(string)$ctr. '-' . $sems . '-'. $kls;
             Excel::load($filepath, function($file) use($filename,$mp,$cat,$sems,$bs,$user,$kls,$ctr,$tc){
             $sheet1 = $file->setActiveSheetIndex(0);
             Excel::create($filename, function($excel) use($sheet1,$mp,$cat,$sems,$bs,$user,$kls,$ctr,$tc) {
@@ -175,28 +175,43 @@ class NilaiController extends Controller
             })->export('xls');
         });   
         }
-        
     }
-    public function showUH()
-    {
+
+    public function UploadNilai(Request $request){
+        $type = explode("-",$request->fupload);
+        $type[count($type)-1] = substr($type[count($type)-1],0,strlen($type[count($type)-1])-4);
+        $mapel = $type[0];
+        $tipe = $type[1];
+        $penilaianKe = $type[2];
+        $thn = explode('_',$type[3]);
+        $thn = $thn[0].'/'.$thn[1];
+        $sems = $type[4];
+        $kelas = (count($type)==6?$type[5]:$type[5].'-'.$type[6]);
+        Excel::load($request->fupload, function($reader) {
+            
+        });
+    }
+
+    public function showUH(){
         $mp = MataPelajaran::all();
         return view('nilai.uh',['mp'=>$mp]);
     }
-    public function showPsiko()
-    {
+
+    public function showPsiko(){
         $mp = MataPelajaran::all();
         return view('nilai.psikomotor',['mp'=>$mp]);
     }
-    public function showAfe()
-    {
+
+    public function showAfe(){
         $mp = MataPelajaran::all();
         return view('nilai.afektif',['mp'=>$mp]);
     }
-    public function showMidFin()
-    {
+
+    public function showMidFin(){
         $mp = MataPelajaran::all();
         return view('nilai.check',['mp'=>$mp]);
     }
+
     public function showGenExcel(){
         $mp = MataPelajaran::all();
         $sem = TahunAjaran::all();
@@ -204,4 +219,5 @@ class NilaiController extends Controller
         $kelas = Kelas::all();
         return view('nilai.up',['mp'=>$mp , 'sem'=>$sem, 'nilai'=>$nilai, 'mps'=>$mp, 'sems'=>$sem, 'mpx'=>$mp, 'semx'=>$sem,'kelas'=>$kelas]);
     }
+
 }

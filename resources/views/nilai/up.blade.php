@@ -55,7 +55,7 @@
       <br>
       <div class="blok">
         <h3>2. Upload Nilai</h3>
-        <form action="/postexe" method="post">
+        <form action="/uploadexe" method="post">
           @csrf
           <div class="form-group">
             <label for="fupload">Masukkan file yang akan di upload </label>
@@ -124,7 +124,7 @@
       <br>
       <div class="blok">
         <h3>2. Upload Nilai</h3>
-        <form action="/postexe" method="post">
+        <form action="/uploadexe" method="post">
           @csrf
           <div class="form-group">
             <label for="fupload">Masukkan file yang akan di upload </label>
