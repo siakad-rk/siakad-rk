@@ -28,6 +28,8 @@ class TeacherController extends Controller
         $input->description = $request->content;
         $input->no_induk = Auth::user()->no_induk;
         $input->save();
+        Session::flash('message', 'Tambah pengumuman berhasil!');
+        Session::flash('alert-class', 'alert-success'); 
         return redirect('/');
     }   
     public function showFormAnnouncement()

@@ -7,25 +7,26 @@
       <ul class="nav navbar-nav">
         <li><a href="/">Home</a></li>
         @if(Auth::user()->kode=="SIS")
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nilai <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/nilaiuh">Ulangan Harian</a></li>
-            <li><a href="/nilaips">Psikomotorik</a></li>
-            <li><a href="/nilaiaf">Afektif</a></li>
-            <li><a href="/nilaimidend">UTS & UAS</a></li>
-          </ul>
-        </li>
-        <li><a href="/ekskul">Ekstrakurikuler</a></li>
-        <li><a href="/posisi">Posisi Guru</a></li>
-        <li><a href="/kalender">Kalender</a></li>
-        <li><a href="/info">Info Lomba</a></li>
-        <li><a href="#">Bantuan</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nilai <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/nilaiuh">Ulangan Harian</a></li>
+              <li><a href="/nilaips">Psikomotorik</a></li>
+              <li><a href="/nilaiaf">Afektif</a></li>
+              <li><a href="/nilaimidend">UTS & UAS</a></li>
+            </ul>
+          </li>
+          <li><a href="/ekskul">Ekstrakurikuler</a></li>
+          <li><a href="/posisi">Posisi Guru</a></li>
+          <li><a href="/kalender">Kalender</a></li>
+          <li><a href="/info">Info Lomba</a></li>
+          <li><a href="#">Bantuan</a></li>
         @endif
         @if(Auth::user()->kode=="GUR")
-        <li><a href="/inputnilaiexcel">Input/Edit Nilai</a></li>
-        <li><a href="/addinfo">Add Lomba</a></li>
-        <li><a href="#">Bantuan</a></li>
+          <li><a href="/inputnilaiexcel">Input/Edit Nilai</a></li>
+          <li><a href="/info">Lomba</a></li>
+          <li><a href="/ekskul">Ekstrakurikuler</a></li>
+          <li><a href="#">Bantuan</a></li>
         @endif
       </ul>
       <ul class="nav navbar-nav navbar-right">

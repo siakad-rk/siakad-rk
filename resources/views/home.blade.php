@@ -10,6 +10,13 @@
 @stop
 
 @section('content')
+
+  @if(session('message'))
+  <div class="alert {{session('alert-class')}} alert-dismissible"">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    {{session('message')}}
+  </div>
+  @endif
   @if(Auth::user()->kode=="GUR")
     <div align="right" style="padding: 10px">
       <a href="/addAnnounce" class="btn btn-basic">Tambah Pengumuman</a>

@@ -215,9 +215,9 @@ class NilaiController extends Controller
     public function showGenExcel(){
         $mp = MataPelajaran::all();
         $sem = TahunAjaran::all();
-        $nilai = Nilai::all();
+        $siswa = User::where('kode', 'SIS')->get();
         $kelas = Kelas::all();
-        return view('nilai.up',['mp'=>$mp , 'sem'=>$sem, 'nilai'=>$nilai, 'mps'=>$mp, 'sems'=>$sem, 'mpx'=>$mp, 'semx'=>$sem,'kelas'=>$kelas]);
+        return view('nilai.up',['mp'=>$mp , 'sem'=>$sem, 'siswa'=>$siswa, 'mps'=>$mp, 'sems'=>$sem, 'mpx'=>$mp, 'semx'=>$sem,'kelas'=>$kelas]);
     }
 
 }

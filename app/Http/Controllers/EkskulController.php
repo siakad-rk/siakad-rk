@@ -22,12 +22,24 @@ class EkskulController extends Controller
         return view('ekskul.index',['ekskul'=>$ekskul, 'ekskul_user'=>$ekskul_user]);
     }
 
-    public function tambah(Request $request)
+    public function daftar(Request $request)
     {
     	$student = User::where('no_induk', session('user.no_induk'))->get();
 	    $ekskul = Ekskul::find($request->input('id'));
 	    $ekskul->user()->save($student[0]);
-		session(['user.ekskul_id' => $request->input('id')]);
+		session(['user.ekskul_id' => $request->input('id'), 'user.name' => session('user.name')]);
+        Session::flash('message', 'Daftar ekstrakulikuler berhasil!');
+        Session::flash('alert-class', 'alert-success'); 
+        return redirect('ekskul');
+    }
+
+    public function tambah(Request $request)
+    {
+        $eks = new Ekskul;
+        $eks->name = $request->input('name');
+        $eks->save();
+        Session::flash('message', 'Tambah ekstrakulikuler berhasil!');
+        Session::flash('alert-class', 'alert-success'); 
         return redirect('ekskul');
     }
 }

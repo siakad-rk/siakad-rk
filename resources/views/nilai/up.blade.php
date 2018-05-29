@@ -166,10 +166,22 @@
               @endforeach
             </select>
           </div>
-          @foreach($nilai as $nilai)
           <div class="form-group">
-            <label>{{$nilai->no_induk_siswa}}</label>
-            <input type="number" name="nilai1">
+          <label for="mpc">Nilai ke-</label>
+            <select class="form-control" id="nilaike" name="nilaike">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </div>
+          @foreach($siswa as $siswa)
+          <div class="form-group">
+            <div class="col-md-4">              
+              <label>{{$siswa->no_induk}} - {{$siswa->name}}</label>
+            </div>
+            <div class="col-md-8">              
+              <input type="number" name="nilai">
+            </div>
           </div>
           @endforeach
           <button type="submit" class="btn btn-success">Submit</button>

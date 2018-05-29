@@ -66,9 +66,9 @@ class HomeController extends Controller
 		$lomba->tanggal = $request->input('tanggal');
 		$lomba->lokasi = $request->input('lokasi');
 		$lomba->save();
-		Session::flash('message', 'Add kelas berhasil!');
+		Session::flash('message', 'Add lomba berhasil!');
 		Session::flash('alert-class', 'alert-success'); 
-		return redirect()->route('addinfo');
+		return redirect()->route('info');
 	}
 
 	public function detailPengumuman($id)

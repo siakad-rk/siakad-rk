@@ -30,6 +30,7 @@ Route::group(['middleware' => ['session']], function () {
 	Route::get('/','HomeController@showHome')->name('home');
 	Route::get('/pengumuman/{id}','HomeController@detailPengumuman');
 	Route::get('/ekskul','EkskulController@index')->name('ekskul');
+	Route::post('/daftarekskul','EkskulController@daftar')->name('daftarekskul');
 	Route::post('/tambahekskul','EkskulController@tambah')->name('tambahekskul');
 	Route::get('/kalender','HomeController@kalender')->name('kalender');
 
@@ -44,7 +45,6 @@ Route::group(['middleware' => ['session']], function () {
 	
 	Route::get('/posisi','positionController@showPosition');
 	Route::get('/info','HomeController@info')->name('info');
-	Route::get('/addinfo','HomeController@showAddInfo')->name('addinfo');
 	Route::post('/addinfo','HomeController@addInfo');
 	Route::get('/addAnnounce','TeacherController@showFormAnnouncement');
 	Route::post('/postAnnounce','TeacherController@postAnnouncement');
