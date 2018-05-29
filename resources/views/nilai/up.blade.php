@@ -174,16 +174,27 @@
               <option>3</option>
             </select>
           </div>
+          <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Nama</th>
+              <th scope="col">Nilai</th>
+            </tr>
+          </thead>
+          <tbody>
+          @php
+            $i = 1;
+          @endphp
           @foreach($siswa as $siswa)
-          <div class="form-group">
-            <div class="col-md-4">              
-              <label>{{$siswa->no_induk}} - {{$siswa->name}}</label>
-            </div>
-            <div class="col-md-8">              
-              <input type="number" name="nilai">
-            </div>
-          </div>
+            <tr>
+              <th scope="row">{{$i++}}</th>
+              <td>{{$siswa->no_induk}} - {{$siswa->name}}</td>
+              <td><input type="number" name="nilai"></td>
+            </tr>
           @endforeach
+          </tbody>
+          </table>
           <button type="submit" class="btn btn-success">Submit</button>
         </form>
       </div>
