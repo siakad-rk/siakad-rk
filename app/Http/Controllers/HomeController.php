@@ -70,4 +70,10 @@ class HomeController extends Controller
 		Session::flash('alert-class', 'alert-success'); 
 		return redirect()->route('addinfo');
 	}
+
+	public function detailPengumuman($id)
+	{
+		$an = Announcement::find($id);
+		return view('detailannouncement',['an'=>$an]);
+	}
 }

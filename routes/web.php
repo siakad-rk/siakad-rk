@@ -28,6 +28,7 @@ Route::get('/logout', 'HomeController@logout')->name('logout');
 
 Route::group(['middleware' => ['session']], function () {
 	Route::get('/','HomeController@showHome')->name('home');
+	Route::get('/pengumuman/{id}','HomeController@detailPengumuman');
 	Route::get('/ekskul','EkskulController@index')->name('ekskul');
 	Route::post('/tambahekskul','EkskulController@tambah')->name('tambahekskul');
 	Route::get('/kalender','HomeController@kalender')->name('kalender');
